@@ -95,7 +95,7 @@ public class ImageFetcher {
       }
 
       // Try saving to storage
-      try? self.storage?.setObject(image, forKey: url.absoluteString)
+      ((try? self.storage?.setObject(image, forKey: url.absoluteString)) as ()??)
       completion(.value(image))
     }
   }
